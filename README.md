@@ -25,14 +25,14 @@ The event record doesn't need to be created manually. ZoneMinder is a camera sys
 
 The unsanitized monitor name reaches two separate `exec()` calls:
 
-**Line 126 — ffmpeg:**
+**Line 126 | ffmpeg:**
 
 ```php
 $cmd = ZM_PATH_FFMPEG.' -f concat -safe 0 -i event_files.txt -c copy \''.$export_dir.'/'.$mergedFileName. '\' 2>&1';
 exec($cmd, $output, $return);
 ```
 
-**Line 150 — tar/zip:**
+**Line 150 | tar/zip:**
 
 ```php
 $command .= ' \''.$mergedFileName.'\'';
@@ -91,7 +91,7 @@ Success! Command injection worked, /tmp/pwned was created inside the container.
 
 ### CVSS
 
-**8.4 (High)** — `AV:N/AC:L/PR:R/UI:R/S:C/C:H/I:H/A:H`
+**8.4 (High)**:`AV:N/AC:L/PR:R/UI:R/S:C/C:H/I:H/A:H`
 
 We can debate on `PR:L` vs `PR:R`, but either way it’s a high-severity remote code execution vulnerability in a widely used open-source project. The attack surface is pretty broad, and the fact that the trigger can be set off by a different user than the one who sets up the monitor name adds an interesting twist to the exploitability. If we accept `PR:L`, it becomes a 9.0 (Critical).
 
