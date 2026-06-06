@@ -103,7 +103,8 @@ Either way, at a minimum `escapeshellarg()` costs nothing.
 - 03/09/2026: Patched in commit `b3a7c05`
 - 06/08/2026: Public disclosure
 
-[!NOTE] Fixed within 12 hours of report. No acknowledgment from the maintainer that this is a security issue. I disagree
+> [!NOTE]
+> Fixed within 12 hours of report. No acknowledgment from the maintainer that this is a security issue. I disagree
 
 ### Fix
 
